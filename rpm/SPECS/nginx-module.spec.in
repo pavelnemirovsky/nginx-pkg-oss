@@ -79,7 +79,7 @@ cd %{bdir}
 	--with-ld-opt="%{WITH_LD_OPT}" \
 	--with-debug
 make %{?_smp_mflags}
-for so in `find %{bdir}/nginx*/objs/ -type f -name "*.so"`; do
+for so in `find %{bdir}/build/nginx*/objs/ -type f -name "*.so"`; do
 debugso=`echo $so | sed -e "s|.so|-debug.so|"`
 mv $so $debugso
 done
@@ -98,7 +98,7 @@ cd %{bdir}
 %%MODULE_PREINSTALL%%
 
 %{__mkdir} -p $RPM_BUILD_ROOT%{_libdir}/nginx/modules
-for so in `find %{bdir}/nginx*/objs/ -maxdepth 1 -type f -name "*.so"`; do
+for so in `find %{bdir}/build/nginx*/objs/ -maxdepth 1 -type f -name "*.so"`; do
 %{__install} -m755 $so \
    $RPM_BUILD_ROOT%{_libdir}/nginx/modules/
 done
