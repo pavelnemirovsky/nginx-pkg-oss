@@ -9,6 +9,7 @@
 # Obtains pkg-oss tool, creates packaging files and copies in module source.
 #
 # CHANGELOG
+# v0.13 [29-May-2019] Openresty adoption
 # v0.12 [30-Aug-2017] -o option to specify destination for package files
 #                     -y (--non-interactive) option for automated builds
 # v0.11 [20-Jun-2017] Enforces NGINX versions that support dynamic modules

@@ -50,10 +50,10 @@ License: %%MODULE_PACKAGE_LICENSE%%
 BuildRoot: %{_tmppath}/%{name}-%{main_version}-%{main_release}-root
 BuildRequires: zlib-devel
 BuildRequires: pcre-devel
-Requires: nginx == %{?epoch:%{epoch}:}%%MAIN_VERSION%%-%%MAIN_RELEASE%%%{?dist}.ngx
+Requires: openresty == %{?epoch:%{epoch}:}%%MAIN_VERSION%%-%%MAIN_RELEASE%%%{?dist}.ngx
 
 %description
-nginx %%SHORT_SUMMARY%%.
+openresty %%SHORT_SUMMARY%%.
 
 %if 0%{?suse_version} || 0%{?amzn}
 %debug_package
