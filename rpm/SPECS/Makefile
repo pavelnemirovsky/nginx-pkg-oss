@@ -237,10 +237,10 @@ export MODULE_POST_xslt
 
 
 BASE_CONFIGURE_ARGS=\
-	--prefix=%{_sysconfdir}/nginx \
-	--sbin-path=%{_sbindir}/nginx \
-	--modules-path=%{_libdir}/nginx/modules \
-	--conf-path=%{_sysconfdir}/nginx/nginx.conf \
+	--prefix=%{_usr}/local/openresty/nginx/ \
+	--sbin-path=%{_usr}/local/openresty/nginx/sbin/ \
+	--modules-path=%{_usr}/local/openresty/nginx/module/ \
+	--conf-path=%{_usr}/local/openresty/nginx/nginx.conf \
 	--error-log-path=%{_localstatedir}/log/nginx/error.log \
 	--http-log-path=%{_localstatedir}/log/nginx/access.log \
 	--pid-path=%{_localstatedir}/run/nginx.pid \

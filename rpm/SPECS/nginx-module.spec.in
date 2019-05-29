@@ -55,8 +55,6 @@ Requires: nginx == %{?epoch:%{epoch}:}%%MAIN_VERSION%%-%%MAIN_RELEASE%%%{?dist}.
 %description
 nginx %%SHORT_SUMMARY%%.
 
-%define orprefix      %{_usr}/local/openresty
-
 %if 0%{?suse_version} || 0%{?amzn}
 %debug_package
 %endif
@@ -76,7 +74,7 @@ tar --strip-components=1 -zxf %{SOURCE0}
 %build
 %%MODULE_PREBUILD%%
 cd %{bdir}
-./configure  --prefix="%{orprefix}" %{BASE_CONFIGURE_ARGS} %{MODULE_CONFIGURE_ARGS} \
+./configure %{BASE_CONFIGURE_ARGS} %{MODULE_CONFIGURE_ARGS} \
 	--with-cc-opt="%{WITH_CC_OPT}" \
 	--with-ld-opt="%{WITH_LD_OPT}" \
 	--with-debug
@@ -85,7 +83,7 @@ for so in `find %{bdir}/build/nginx*/objs/ -type f -name "*.so"`; do
 debugso=`echo $so | sed -e "s|.so|-debug.so|"`
 mv $so $debugso
 done
-./configure  --prefix="%{orprefix}" %{BASE_CONFIGURE_ARGS} %{MODULE_CONFIGURE_ARGS} \
+./configure  %{BASE_CONFIGURE_ARGS} %{MODULE_CONFIGURE_ARGS} \
 	--with-cc-opt="%{WITH_CC_OPT}" \
 	--with-ld-opt="%{WITH_LD_OPT}"
 make %{?_smp_mflags}
