@@ -262,7 +262,7 @@ BASE_CONFIGURE_ARGS=\
     --with-http_mp4_module \
     --with-http_gunzip_module \
     --with-threads \
-    --with-luajit-xcflags=\"-DLUAJIT_NUMMODE=2 -DLUAJIT_ENABLE_LUA52COMPAT\" \
+    --with-luajit-xcflags=''-DLUAJIT_NUMMODE=2 -DLUAJIT_ENABLE_LUA52COMPAT'' \
     --with-dtrace-probes
 
 export CR=\\n
