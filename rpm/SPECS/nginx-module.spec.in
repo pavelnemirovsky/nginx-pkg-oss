@@ -83,7 +83,7 @@ for so in `find %{bdir}/build/nginx*/objs/ -type f -name "*.so"`; do
 debugso=`echo $so | sed -e "s|.so|-debug.so|"`
 mv $so $debugso
 done
-./configure  %{BASE_CONFIGURE_ARGS} %{MODULE_CONFIGURE_ARGS} \
+./configure %{BASE_CONFIGURE_ARGS} %{MODULE_CONFIGURE_ARGS} \
 	--with-cc-opt="%{WITH_CC_OPT}" \
 	--with-ld-opt="%{WITH_LD_OPT}"
 make %{?_smp_mflags}
@@ -108,7 +108,7 @@ done
 
 %files
 %defattr(-,root,root)
-%{orprefix}/nginx/modules/*
+%{_libdir}/nginx/modules/*
 %dir %{_datadir}/doc/%%NAME%%
 %{_datadir}/doc/%%NAME%%/*
 %%MODULE_FILES%%
