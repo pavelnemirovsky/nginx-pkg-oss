@@ -50,7 +50,7 @@ License: %%MODULE_PACKAGE_LICENSE%%
 BuildRoot: %{_tmppath}/%{name}-%{main_version}-%{main_release}-root
 BuildRequires: zlib-devel
 BuildRequires: pcre-devel
-Requires: openresty == %{?epoch:%{epoch}:}%%MAIN_VERSION%%-%%MAIN_RELEASE%%%{?dist}.ngx
+Requires: openresty == %{?epoch:%{epoch}:}%%MAIN_VERSION%%-%%MAIN_RELEASE%%%{?dist}
 
 %description
 openresty %%SHORT_SUMMARY%%.
