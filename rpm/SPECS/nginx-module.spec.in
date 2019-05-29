@@ -78,7 +78,7 @@ cd %{bdir}
 	--with-cc-opt="%{WITH_CC_OPT}" \
 	--with-ld-opt="%{WITH_LD_OPT}" \
 	--with-debug
-make %{?_smp_mflags} modules
+make %{?_smp_mflags}
 for so in `find %{bdir}/objs/ -type f -name "*.so"`; do
 debugso=`echo $so | sed -e "s|.so|-debug.so|"`
 mv $so $debugso
@@ -86,7 +86,7 @@ done
 ./configure %{BASE_CONFIGURE_ARGS} %{MODULE_CONFIGURE_ARGS} \
 	--with-cc-opt="%{WITH_CC_OPT}" \
 	--with-ld-opt="%{WITH_LD_OPT}"
-make %{?_smp_mflags} modules
+make %{?_smp_mflags}
 
 %install
 cd %{bdir}
