@@ -2,7 +2,7 @@ SHELL=		/bin/bash
 
 BASE_VERSION=	1.13.6
 BASE_RELEASE=	1
-BASE_SRC=	nginx-$(BASE_VERSION).tar.gz
+BASE_SRC=	openresty-$(BASE_VERSION).tar.gz
 SRCPATH?=	../SOURCES
 BUILD_ENV_PATH=	${HOME}/rpmbuild
 MODULE_TARGET?=	oss
@@ -19,7 +19,7 @@ MODULE_SUMMARY_PREFIX=	nginx
 endif
 
 MODULE_PACKAGE_VENDOR=	Nginx, Inc.
-MODULE_PACKAGE_URL=	http://nginx.org/
+MODULE_PACKAGE_URL=	http://openresty.org/
 MODULE_PACKAGE_LICENSE=2-clause BSD-like license
 
 MODULES=	geoip image-filter njs perl xslt
