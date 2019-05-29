@@ -237,35 +237,45 @@ export MODULE_POST_xslt
 
 
 BASE_CONFIGURE_ARGS=\
-	--prefix=%{_usr}/local/openresty/nginx/ \
-    --with-cc-opt="-DNGX_LUA_ABORT_AT_PANIC -I%{_usr}/local/openresty/nginx/zlib/include -I%{_usr}/local/openresty/nginx/pcre/include -I%{_usr}/local/openresty/nginx/openssl/include" \
-    --with-ld-opt="-L%{_usr}/local/openresty/nginx/zlib/lib -L%{_usr}/local/openresty/nginx/pcre/lib -L%{_usr}/local/openresty/nginx/openssl/lib -Wl,-rpath,%{_usr}/local/openresty/nginx/zlib/lib:%{_usr}/local/openresty/nginx/pcre/lib:%{_usr}/local/openresty/nginx/openssl/lib" \
-    --with-pcre-jit \
-    --without-http_rds_json_module \
-    --without-http_rds_csv_module \
-    --without-lua_rds_parser \
-    --with-stream \
-    --with-stream_ssl_module \
-    --with-stream_ssl_preread_module \
-    --with-http_v2_module \
-    --without-mail_pop3_module \
-    --without-mail_imap_module \
-    --without-mail_smtp_module \
-    --with-http_stub_status_module \
-    --with-http_realip_module \
-    --with-http_addition_module \
-    --with-http_auth_request_module \
-    --with-http_secure_link_module \
-    --with-http_random_index_module \
-    --with-http_gzip_static_module \
-    --with-http_sub_module \
-    --with-http_dav_module \
-    --with-http_flv_module \
-    --with-http_mp4_module \
-    --with-http_gunzip_module \
-    --with-threads \
-    --with-luajit-xcflags='-DLUAJIT_NUMMODE=2 -DLUAJIT_ENABLE_LUA52COMPAT' \
-    --with-dtrace-probes
+	--prefix=%{_sysconfdir}/nginx \
+	--sbin-path=%{_sbindir}/nginx \
+	--modules-path=%{_libdir}/nginx/modules \
+	--conf-path=%{_sysconfdir}/nginx/nginx.conf \
+	--error-log-path=%{_localstatedir}/log/nginx/error.log \
+	--http-log-path=%{_localstatedir}/log/nginx/access.log \
+	--pid-path=%{_localstatedir}/run/nginx.pid \
+	--lock-path=%{_localstatedir}/run/nginx.lock \
+	--http-client-body-temp-path=%{_localstatedir}/cache/nginx/client_temp \
+	--http-proxy-temp-path=%{_localstatedir}/cache/nginx/proxy_temp \
+	--http-fastcgi-temp-path=%{_localstatedir}/cache/nginx/fastcgi_temp \
+	--http-uwsgi-temp-path=%{_localstatedir}/cache/nginx/uwsgi_temp \
+	--http-scgi-temp-path=%{_localstatedir}/cache/nginx/scgi_temp \
+	--user=%{nginx_user} \
+	--group=%{nginx_group} \
+	--with-compat \
+	--with-file-aio \
+	--with-threads \
+	--with-http_addition_module \
+	--with-http_auth_request_module \
+	--with-http_dav_module \
+	--with-http_flv_module \
+	--with-http_gunzip_module \
+	--with-http_gzip_static_module \
+	--with-http_mp4_module \
+	--with-http_random_index_module \
+	--with-http_realip_module \
+	--with-http_secure_link_module \
+	--with-http_slice_module \
+	--with-http_ssl_module \
+	--with-http_stub_status_module \
+	--with-http_sub_module \
+	--with-http_v2_module \
+	--with-mail \
+	--with-mail_ssl_module \
+	--with-stream \
+	--with-stream_realip_module \
+	--with-stream_ssl_module \
+	--with-stream_ssl_preread_module
 
 export CR=\\n
 
