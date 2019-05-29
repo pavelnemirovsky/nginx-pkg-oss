@@ -59,8 +59,13 @@ openresty %%SHORT_SUMMARY%%.
 %debug_package
 %endif
 
-%define WITH_CC_OPT
-%define WITH_LD_OPT 
+%define orprefix            %{_usr}/local/openresty
+%define zlib_prefix         %{orprefix}/zlib
+%define pcre_prefix         %{orprefix}/pcre
+%define openssl_prefix      %{orprefix}/openssl
+
+%define WITH_CC_OPT "-DNGX_LUA_ABORT_AT_PANIC -I%{zlib_prefix}/include -I%{pcre_prefix}/include -I%{openssl_prefix}/include" \
+%define WITH_LD_OPT "-L%{zlib_prefix}/lib -L%{pcre_prefix}/lib -L%{openssl_prefix}/lib -Wl,-rpath,%{zlib_prefix}/lib:%{pcre_prefix}/lib:%{openssl_prefix}/lib" \
 
 %define BASE_CONFIGURE_ARGS $(echo "%%BASE_CONFIGURE_ARGS%%")
 %define MODULE_CONFIGURE_ARGS $(echo "%%MODULE_CONFIGURE_ARGS%%")
