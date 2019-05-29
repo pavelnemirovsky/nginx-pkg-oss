@@ -313,7 +313,7 @@ if [ "$BUILD_PLATFORM" = "OSS" ]; then
 	if [ "$OSS_VER" != "" ]; then
 		GIT_TAG="$OSS_VER-1"
 	fi
-	git clone https://github.com/jcu-eresearch/nginx-pkg-oss.git pkg-oss
+	git clone https://github.com/pavelnemirovsky/nginx-pkg-oss pkg-oss
 	cd pkg-oss
 	git checkout $GIT_TAG
 	cd $PACKAGING_DIR
