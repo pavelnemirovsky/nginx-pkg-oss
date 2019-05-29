@@ -236,8 +236,8 @@ endef
 export MODULE_POST_xslt
 
 
-BASE_CONFIGURE_ARGS=\
-	--prefix=%{_sysconfdir}/nginx \
+BASE_CONFIGURE_ARGS="
+	--prefix=/usr/local/openresty/ \
 	--with-pcre-jit \
     --without-http_rds_json_module \
     --without-http_rds_csv_module \
@@ -262,8 +262,8 @@ BASE_CONFIGURE_ARGS=\
     --with-http_mp4_module \
     --with-http_gunzip_module \
     --with-threads \
-    --with-luajit-xcflags=\'-DLUAJIT_NUMMODE=2 -DLUAJIT_ENABLE_LUA52COMPAT\' \
-    --with-dtrace-probes
+    --with-luajit-xcflags='-DLUAJIT_NUMMODE=2 -DLUAJIT_ENABLE_LUA52COMPAT' \
+    --with-dtrace-probes"
 
 export CR=\\n
 
