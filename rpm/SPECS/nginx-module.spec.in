@@ -112,8 +112,8 @@ done
 %files
 %defattr(-,root,root)
 %{orprefix}/nginx/modules/*
-%dir %{_datadir}/doc/%%NAME%%
-%{_datadir}/doc/%%NAME%%/*
+%dir %{orprefix}/doc/%%NAME%%
+%{orprefix}/doc/%%NAME%%/*
 %%MODULE_FILES%%
 
 %post
