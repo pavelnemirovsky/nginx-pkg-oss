@@ -269,7 +269,7 @@ $(BASE_SRC):
 	elif [ -f $(SRCPATH)/nginx_$(BASE_VERSION).orig.tar.gz ]; then \
 		cp -P $(SRCPATH)/nginx_$(BASE_VERSION).orig.tar.gz $(BASE_SRC) ; \
 	else \
-		wget http://nginx.org/download/$(BASE_SRC) ; \
+		wget http://openresty.org/download/$(BASE_SRC) ; \
 	fi ; \
 	}
 
