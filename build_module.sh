@@ -47,7 +47,7 @@ if [ $# -eq 0 ]; then
 	echo " -s | --skip-depends            # Skip dependecies check/install"
 	echo " -y | --non-interactive         # Automatically install dependencies and overwrite files"
 	echo " -f | --force-dynamic           # Attempt to convert static configuration to dynamic module"
-	echo " -r <NGINX Plus release number> # Build against the corresponding OSS version for this release"
+	echo " -r <Openresty release number>  # Build against the corresponding OSS version for this release"
 	echo " -v [NGINX OSS version number]  # Build against this OSS version [current mainline] (default)"
 	echo " -o <package output directory>  # Create package(s) in this directory"
 	echo ""
