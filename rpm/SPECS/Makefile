@@ -238,8 +238,8 @@ export MODULE_POST_xslt
 
 BASE_CONFIGURE_ARGS=\
 	--prefix=%{_usr}/local/openresty/nginx/ \
-    --with-cc-opt="-DNGX_LUA_ABORT_AT_PANIC -I%{zlib_prefix}/include -I%{pcre_prefix}/include -I%{openssl_prefix}/include" \
-    --with-ld-opt="-L%{_usr}/local/openresty/nginx/zlib/lib -L%{_usr}/local/openresty/nginx/pcre/lib -L%{_usr}/local/openresty/nginx/openssl/lib -Wl,-rpath,%{_usr}/local/openresty/nginx/zlib/lib:%{pcre_prefix}/lib:%{_usr}/local/openresty/nginx/pcre/lib" \
+    --with-cc-opt="-DNGX_LUA_ABORT_AT_PANIC -I%{_usr}/local/openresty/nginx/zlib/include -I%{_usr}/local/openresty/nginx/pcre/include -I%{_usr}/local/openresty/nginx/openssl/include" \
+    --with-ld-opt="-L%{_usr}/local/openresty/nginx/zlib/lib -L%{_usr}/local/openresty/nginx/pcre/lib -L%{_usr}/local/openresty/nginx/openssl/lib -Wl,-rpath,%{_usr}/local/openresty/nginx/zlib/lib:%{_usr}/local/openresty/nginx/pcre/lib:%{_usr}/local/openresty/nginx/openssl/lib" \
     --with-pcre-jit \
     --without-http_rds_json_module \
     --without-http_rds_csv_module \
